@@ -1,0 +1,92 @@
+{
+    "info": {
+        "name": "FastAPI-React-Upload",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Validate Email",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"email\": \"test@example.com\" }"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/validate-email",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "validate-email"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Upload URL",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"file_name\": \"sample.txt\", \"chunk_size\": 1048576, \"file_size\": 2097152 }"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/get-upload-url",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "get-upload-url"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Complete Upload",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{ \"file_name\": \"sample.txt\", \"upload_id\": \"123456\", \"parts\": [] }"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/complete-upload",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "complete-upload"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
